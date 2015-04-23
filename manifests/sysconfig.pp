@@ -1,3 +1,4 @@
+#class definition for sysconfig
 class system::sysconfig (
   $config   = {},
   $schedule = $::system::schedule,
@@ -14,6 +15,11 @@ class system::sysconfig (
 
   class { '::system::sysconfig::keyboard':
     config   => $config['keyboard'],
+    schedule => $schedule,
+  }
+
+  class { '::system::sysconfig::ntpd':
+    config   => $config['ntpd'],
     schedule => $schedule,
   }
 
