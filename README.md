@@ -492,6 +492,9 @@ Example configuration:
     system::sysconfig::selinux:
       state: 'enforcing'
 
+    system::sysconfig::ntpd:
+      options: "'-u ntp:ntp -p /var/run/ntpd.pid -g'"
+
 No defaults.
 
 Note: Values must not contain whitespace
